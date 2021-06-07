@@ -51,7 +51,8 @@ class tally:
       try:
         val = int(temp[2])
       except: val = 1
-    if name not in self.tallyMap: return "Tally " + name + " doesn't exist"
+    if name not in self.tallyMap:
+      self.createTally(message)
     self.tallyMap[name] += val
     return "Tally " + name + " now has value " + str(self.tallyMap[name])
 
