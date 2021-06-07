@@ -35,6 +35,9 @@ async def on_message(message):
 
     if (message.content.startswith("$tally")):
         await message.channel.send(tracker.addTally(message.content))
+    
+    if(message.content.startswith("$list")):
+      await message.channel.send(tracker.listTally())
 
 
 keep_alive()

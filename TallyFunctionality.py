@@ -1,8 +1,9 @@
-help = "Welcome to tallybot here is a list of the following commands \n \
+help = "Welcome to tallybot here is a list of my commands :) \n \
 $create name [starting tally] \n \
 $remove name \n \
 $tally name [increment_amount] \n \
 $show tally \n \
+$list \n \
 "
 class tally:
   
@@ -53,4 +54,10 @@ class tally:
     if name not in self.tallyMap: return "Tally " + name + " doesn't exist"
     self.tallyMap[name] += val
     return "Tally " + name + " now has value " + str(self.tallyMap[name])
+
+  def listTally(self):
+    toRet = "A list of all my tallies: \n"
+    for x in self.tallyMap:
+      toRet += x + "\n"
+    return toRet
 
